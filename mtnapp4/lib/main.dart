@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mtnapp4/login_screen.dart';
+import 'package:mtnapp4/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'InnoTekSo',
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
-              .copyWith(secondary: Colors.amberAccent)),
-      home: const LoginScreen(),
+        primarySwatch: Colors.indigo,
+      ),
+      home: const SplashScreen(),
     );
   }
 }

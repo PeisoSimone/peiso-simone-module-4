@@ -37,10 +37,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 padding: const EdgeInsets.all(10),
                 child: const Text(
                   'InnoTekSo',
-                  style: TextStyle(
-                      //       color: Colors.blue,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 30),
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
                 )),
             Container(
                 alignment: Alignment.center,

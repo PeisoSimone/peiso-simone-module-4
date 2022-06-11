@@ -41,7 +41,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 child: const Text(
                   'InnoTekSo',
                   style: TextStyle(
-                      color: Colors.blue,
+                      //    color: Colors.blue,
                       fontWeight: FontWeight.w500,
                       fontSize: 30),
                 )),

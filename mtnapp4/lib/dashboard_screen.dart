@@ -9,11 +9,19 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Dashboard'),
-          centerTitle: true,
-        ),
-        body: const MyStatefulWidget());
+      appBar: AppBar(
+        title: const Text('Dashboard'),
+        centerTitle: true,
+      ),
+      body: const MyStatefulWidget(),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => OtherScreen()));
+        },
+        label: const Text('Other'),
+      ),
+    );
   }
 }
 
@@ -36,10 +44,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 padding: const EdgeInsets.all(10),
                 child: const Text(
                   'Hi Welcome to your Dashboard',
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 30),
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
                 )),
             Container(
                 height: 200,
@@ -57,8 +62,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 child: ElevatedButton(
                   child: const Text('Edit'),
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => UserProfileScreen()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => EditScreen()));
                   },
                 )),
           ],

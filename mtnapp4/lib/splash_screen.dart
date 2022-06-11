@@ -1,29 +1,30 @@
-import 'package:video_player/video_player.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:mtnapp4/login_screen.dart';
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  late VideoPlaybackController _controller;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white10,
-      body: Container(),
+    return AnimatedSplashScreen(
+      splash: Column(
+        children: [
+          Image.asset(
+            'assets/pic.png',
+            width: 300,
+            height: 300,
+          ),
+          const Text(
+            'InnoTekSo',
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          )
+        ],
+      ),
+      backgroundColor: Colors.white,
+      nextScreen: const LoginScreen(),
+      splashIconSize: 250,
+      duration: 4000,
     );
   }
 }
-
-class VideoPlaybackController {}
