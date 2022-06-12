@@ -1,6 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:lottie/lottie.dart';
 import 'package:mtnapp4/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -8,7 +10,8 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      splash: Column(
+      splash: Lottie.asset('assets/103154-becket-loader-01.json'),
+      /*splash: Column(
         children: [
           Image.asset(
             'assets/pic.png',
@@ -20,10 +23,12 @@ class SplashScreen extends StatelessWidget {
             style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
           )
         ],
-      ),
+      ),*/
       backgroundColor: Colors.white,
       nextScreen: const LoginScreen(),
-      splashIconSize: 250,
+      splashTransition: SplashTransition.fadeTransition,
+      pageTransitionType: PageTransitionType.topToBottom,
+      splashIconSize: 500,
       duration: 4000,
     );
   }
